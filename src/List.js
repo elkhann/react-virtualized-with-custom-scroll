@@ -25,7 +25,10 @@ class ScrollList extends Component {
   handleClick = e => {
     e.preventDefault();
     let scrollTo = this.state.scrollToIndex * this.state.rowHeight;
-    this.scrollBar.current.scrollTop(scrollTo);
+    this.scrollBar.current.view.scroll({
+      top: scrollTo,
+      behavior: "smooth"
+    });
   };
 
   handleScroll = e => {
