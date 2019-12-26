@@ -1,0 +1,46 @@
+.track-vertical {
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  border-radius: 3px;
+  background: rgba(105, 91, 224, 0.111);
+}
+
+.track-vertical .thumb-vertical {
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba(248, 36, 36, 0.774);
+}
+
+.view {
+  margin-right: 50px;
+  padding-left: 15px;
+  background-color: rgba(241, 240, 250, 0.932);
+}
+
+.row {
+  overflow: hidden;
+  height: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 25px;
+  text-align: left;
+}
+
+.container {
+  height: 400px;
+  width: 400px;
+  padding: 20px;
+}
+
+.input {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input > span {
+  padding-right: 15px;
+}
