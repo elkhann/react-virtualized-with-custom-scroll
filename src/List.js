@@ -11,18 +11,19 @@ class ScrollList extends Component {
 
     this.state = {
       scrollToIndex: 0,
-      height: 300,
+      height: 400,
       overscanRowCount: 10,
       rowHeight: 25,
       rowCount: this.props.countries.length,
-      width: 300
+      width: 400
     };
   }
 
   list = createRef();
   scrollBar = createRef();
 
-  handleClick = () => {
+  handleClick = e => {
+    e.preventDefault();
     let scrollTo = this.state.scrollToIndex * this.state.rowHeight;
     this.scrollBar.current.scrollTop(scrollTo);
   };
@@ -62,15 +63,17 @@ class ScrollList extends Component {
     return (
       <div className="container">
         <div className="input">
-          <span>Scroll to Index</span>
-          <input
-            label="Scroll to Index"
-            name="onScrollTo"
-            placeholder="Index..."
-            onChange={e => this.onScrollToRowChange(e)}
-            value={this.state.scrollToIndex || ""}
-          />
-          <button onClick={this.handleClick}>Scroll</button>
+          <form onSubmit={this.handleClick}>
+            <span>Scroll to Index</span>
+            <input
+              label="Scroll to Index"
+              name="onScrollTo"
+              placeholder="Index..."
+              onChange={e => this.onScrollToRowChange(e)}
+              value={this.state.scrollToIndex || ""}
+            />
+            <button onClick={e => this.handleClick(e)}>Scroll</button>
+          </form>
         </div>
 
         <AutoSizer>
